@@ -12,4 +12,6 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="fhictemail_hint">Enter your FHICT email adress.</string>
+    <string name="fhictpassword_hint">Enter your password.</string>
 </resources>
