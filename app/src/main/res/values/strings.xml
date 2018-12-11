@@ -15,4 +15,6 @@
     <string name="fhictemail_hint">Enter your FHICT email adress.</string>
     <string name="fhictpassword_hint">Enter your password.</string>
     <string name="button_label_login">Log in</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="announcement_message">MANDATORY EVACUATION FOR ALL RESIDENTS LIVING BELOW LAKE TAHOMA  CONTINUES. THIS WAS ISSUED AT THE RECOMMENDATION OF DAM ENGINEERS  WHO REMAIN ON THE SCENE. THE CLASS 1 EMERGENCY AT LAKE TAHOMA  WILL CONTINUE UNTIL DAM INSPECTORS EVALUATE THE DAM DURING  DAYLIGHT HOURS. THIS IS FOR YOUR SAFETY.</string>
 </resources>
