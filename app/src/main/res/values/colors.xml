@@ -2,6 +2,8 @@
 <resources>
     <color name="colorPrimary">#9500ff</color>
     <color name="colorPrimaryDark">#6d00ba</color>
-    <color name="colorAccent">#dadada</color>
-    <color name="colorPrimaryLight">#bfbfbf</color>
+    <color name="colorAccent">#787878</color>
+    <color name="colorPrimaryBackground">#b3b3b3</color>
+    <color name="colorPrimaryText">#262626</color>
+    <color name="colorCardPrimary">#f0adff</color>
 </resources>
