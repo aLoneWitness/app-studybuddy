@@ -1,0 +1,22 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- A 'parent' preference, which enables/disables child preferences (below)
+         when checked/unchecked. -->
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="notifications_allow_notifications"
+        android:title="@string/pref_notifications_title" />
+
+    <ListPreference
+        android:defaultValue="15"
+        android:entries="@array/list_notifications_entries"
+        android:entryValues="@array/list_notifications_values"
+        android:key="notifications_frequency"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_title_notifications_frequency" />
+
+        />
+
+
+</PreferenceScreen>
