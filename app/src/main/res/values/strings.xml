@@ -14,4 +14,6 @@
     </string>
     <string name="fhictemail_hint">Enter your FHICT email adress.</string>
     <string name="fhictpassword_hint">Enter your password.</string>
+    <string name="qr_description">Gebruik QR-code</string>
+    <string name="qrplaceholder_description">Placeholder for QR</string>
 </resources>
