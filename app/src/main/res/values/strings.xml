@@ -20,4 +20,7 @@
     <string name="default_image_placeholder_text">Attempting to load image...</string>
     <string name="card_default_text">Owowofdasdjkfhsdajfsdjaf afdsafsadfsad asfsdafasfsd</string>
     <string name="button_label_closecard">Close</string>
+    <string name="cardViewText">Insert text here. dsahfksdjfksda skjdhfsdaj fsdajkfh sadkjf sdjfsadkjf sadfsadhfsdaf sadfhsdakjf sadfhsDJF SADHFASDF ASJHFSADIGJASIOGJASKDF DKFHSADKF SDKF SADJFH SADFDA SDAKJFHSAKJ FSADKJFHSDF SA.</string>
+    <string name="defaultContentDescription">Missing image, ree</string>
+    <string name="defaultCloseButton">Close</string>
 </resources>
