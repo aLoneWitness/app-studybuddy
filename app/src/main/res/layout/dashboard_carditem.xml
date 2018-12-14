@@ -1,46 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginLeft="@dimen/mtrl_card_spacing"
-    android:layout_marginTop="@dimen/mtrl_card_spacing"
-    android:layout_marginRight="@dimen/mtrl_card_spacing"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/material_card_spacing"
+    android:layout_marginTop="@dimen/material_card_spacing"
+    android:layout_marginRight="@dimen/material_card_spacing"
     android:minHeight="175dp"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    app:cardBackgroundColor="@color/colorPrimary"
+    app:cardCornerRadius="16dp"
     app:strokeColor="@color/colorPrimary"
-    app:strokeWidth="5dp"
-    app:cardCornerRadius="15dp"
-    app:cardBackgroundColor="@color/colorPrimary">
+    app:strokeWidth="5dp">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/cardText"
         android:layout_width="224dp"
         android:layout_height="131dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/card_default_text" />
+        android:text="@string/card_default_text"
+        android:textColor="@color/colorPrimaryText" />
 
     <ImageView
-        android:layout_gravity="end"
-        android:id="@+id/imageView"
+        android:id="@+id/cardImage"
         android:layout_width="95dp"
         android:layout_height="95dp"
+        android:layout_gravity="end"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:contentDescription="@string/default_image_placeholder_text"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/cardplaceholder" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/material_unelevated_button"
+        android:id="@+id/cardCloseButton"
         style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_marginBottom="5dp"
         android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:text="@string/button_label_closecard" />
 
 
