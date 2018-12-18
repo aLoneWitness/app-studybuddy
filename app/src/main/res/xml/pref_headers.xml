@@ -3,12 +3,22 @@
     <!-- These settings headers are only used on tablets. -->
 
     <header
-        android:fragment="nl.niekvangogh.studybuddy.activities.SettingsActivity$GeneralPreferenceFragment"
-        android:icon="@drawable/ic_info_black_24dp"
-        android:title="@string/pref_header_general" />
+        android:fragment="nl.niekvangogh.studybuddy.activities.settings.LanguageSettingsActivity"
+        android:icon="@drawable/icon_globe"
+        android:title="@string/pref_header_language" />
 
     <header
         android:fragment="nl.niekvangogh.studybuddy.activities.settings.NotificationSettingsActivity"
-        android:icon="@drawable/baseline_notification_important_black_18dp"
+        android:icon="@drawable/icon_notification"
         android:title="@string/pref_header_notifications" />
+
+    <header
+        android:fragment="nl.niekvangogh.studybuddy.activities.settings.AccountSettingsActivity"
+        android:icon="@drawable/icon_account"
+        android:title="@string/pref_header_account" />
+
+    <header
+        android:fragment="nl.niekvangogh.studybuddy.activities.settings.HelpSettingsActivity"
+        android:icon="@drawable/icon_help"
+        android:title="@string/pref_header_help" />
 </preference-headers>
