@@ -21,7 +21,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class Sidedrawer extends Activity
+public class MainActivityDrawer extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     /**
@@ -37,7 +37,7 @@ public class Sidedrawer extends Activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sidedrawer);
+        setContentView(R.layout.activity_main_drawer);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -107,14 +107,14 @@ public class Sidedrawer extends Activity
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_sidedrawer, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_main_activity_drawer, container, false);
             return rootView;
         }
 
         @Override
         public void onAttach(Activity activity) {
             super.onAttach(activity);
-            ((Sidedrawer) activity).onSectionAttached(
+            ((MainActivityDrawer) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
     }
