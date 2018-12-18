@@ -5,7 +5,7 @@
     <header
         android:fragment="nl.niekvangogh.studybuddy.activities.settings.LanguageSettingsActivity"
         android:icon="@drawable/icon_globe"
-        android:title="@string/pref_header_language" />
+        android:title="@string/pref_header_general" />
 
     <header
         android:fragment="nl.niekvangogh.studybuddy.activities.settings.NotificationSettingsActivity"
@@ -21,4 +21,5 @@
         android:fragment="nl.niekvangogh.studybuddy.activities.settings.HelpSettingsActivity"
         android:icon="@drawable/icon_help"
         android:title="@string/pref_header_help" />
+
 </preference-headers>
