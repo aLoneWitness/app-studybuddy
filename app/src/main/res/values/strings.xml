@@ -22,6 +22,7 @@
     <string name="cardViewText">Insert text here. dsahfksdjfksda skjdhfsdaj fsdajkfh sadkjf sdjfsadkjf sadfsadhfsdaf sadfhsdakjf sadfhsDJF SADHFASDF ASJHFSADIGJASIOGJASKDF DKFHSADKF SDKF SADJFH SADFDA SDAKJFHSAKJ FSADKJFHSDF SA.</string>
     <string name="defaultContentDescription">Missing image, ree</string>
     <string name="defaultCloseButton">Close</string>
+    <string name="defaultOpenButton">Open</string>
 
     <string-array name="card_title">
         <item>"Announcement"</item>

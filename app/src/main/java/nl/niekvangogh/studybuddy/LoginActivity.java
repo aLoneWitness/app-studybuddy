@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 /**
  * A login screen that offers login via email/password.
  */
+
 public class LoginActivity extends AppCompatActivity {
     private Button button;
 
@@ -31,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     public void openMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+
     }
 
 

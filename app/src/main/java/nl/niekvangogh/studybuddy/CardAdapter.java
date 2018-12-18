@@ -1,5 +1,6 @@
 package nl.niekvangogh.studybuddy;
 
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,10 +16,13 @@ import androidx.recyclerview.widget.RecyclerView;
 public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder> {
 
     private ArrayList<Card> cards = new ArrayList<Card>();
+    private final Activity parentInstance;
+    private Activity referenceActivity;
 
-    public CardAdapter(ArrayList<Card> cards) {
+    public CardAdapter(ArrayList<Card> cards, Activity instance, Activity reference) {
+        this.referenceActivity = reference;
         this.cards = cards;
-
+        this.parentInstance = instance;
     }
 
     @Override
@@ -37,12 +41,18 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
         holder.card_text.setText(card.getDescription());
         holder.card_title.setText(card.getTitle());
 
-        holder.card_close_button.setOnClickListener(new View.OnClickListener(){
-           @Override
-           public void onClick(View v) {
-               cards.remove(0);
-               notifyDataSetChanged();
-           }
+        holder.card_close_button.setOnClickListener(click -> {
+            if(this.parentInstance instanceof MainActivity) {
+                ((MainActivity)this.parentInstance).removeCard(position);
+            }
+        });
+
+        holder.card_open_button.setOnClickListener(click -> {
+            if (this.parentInstance instanceof MainActivity) {
+
+
+                ((MainActivity)this.parentInstance).showSnackbar(String.valueOf(referenceActivity));
+            }
         });
     }
 
@@ -56,6 +66,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
         private TextView card_text;
         private MaterialButton card_close_button;
         private TextView card_title;
+        private MaterialButton card_open_button;
 
         public CardViewHolder(View view) {
             super(view);
@@ -63,6 +74,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
             this.card_text = (TextView) view.findViewById(R.id.cardText);
             this.card_close_button = (MaterialButton) view.findViewById(R.id.cardCloseButton);
             this.card_title = (TextView) view.findViewById(R.id.cardTitle);
+            this.card_open_button = (MaterialButton) view.findViewById(R.id.cardOpenButton);
 
         }
     }

@@ -1,8 +1,10 @@
 package nl.niekvangogh.studybuddy;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.Debug;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
@@ -23,11 +25,16 @@ import static java.security.AccessController.getContext;
 public class MainActivity extends Activity {
 
     private Button closeCardButton;
+
     public int cardCount;
+    private int cardIndex;
+
     RecyclerView dashboardView;
     RecyclerView.Adapter dashboardAdapter;
     RecyclerView.LayoutManager dashboardLayoutManager;
+
     ArrayList<Card> list = new ArrayList<Card>();
+
     private Button button1;
 
     int[] image_id = {
@@ -40,22 +47,27 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        cardIndex = 0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         description = getResources().getStringArray(R.array.card_desc);
         title = getResources().getStringArray(R.array.card_title);
-        createCard("wow im a announcement", "General Announcement", 1);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
+        createCard("wow im a announcement", "General Announcement", 1, DeadlineActivity);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, DeadlineActivity);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, DeadlineActivity);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, DeadlineActivity);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
+
+
 
 
 
@@ -85,17 +97,18 @@ public class MainActivity extends Activity {
         });
     }
 
-    public void createCard(String message, String title, int imageId) {
+    public void createCard(String message, String title, int imageId, Activity activity) {
         Card card = new Card(image_id[imageId], title, message, false);
 
         this.list.add(card);
-        this.dashboardAdapter = new CardAdapter(list);
+        this.dashboardAdapter = new CardAdapter(list, this, activity);
         this.dashboardLayoutManager = new LinearLayoutManager(this);
 
         this.dashboardView = findViewById(R.id.dashboard_view);
         this.dashboardView.setAdapter(dashboardAdapter);
         this.dashboardView.setLayoutManager(dashboardLayoutManager);
         this.dashboardView.setHasFixedSize(true);
+
         //this.dashboardView
 
     }
@@ -103,7 +116,8 @@ public class MainActivity extends Activity {
     public void removeCard(int index) {
         if(list.isEmpty()){
             showSnackbar("You cant delete nothing, silly.");
-        }        else {
+        }
+        else {
             Context context = dashboardView.getContext();
             LayoutAnimationController controller = null;
             controller = AnimationUtils.loadLayoutAnimation(context, R.anim.layout_swipe_right);
@@ -128,6 +142,11 @@ public class MainActivity extends Activity {
 
         Snackbar.make(contextView, message, Snackbar.LENGTH_SHORT)
                 .show();
+    }
+
+    public void switchActivity(Activity activity){
+        Intent intent = new Intent(this, activity.getClass());
+        startActivity(intent);
     }
 
 }

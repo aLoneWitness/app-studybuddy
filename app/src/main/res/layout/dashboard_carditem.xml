@@ -16,7 +16,7 @@
     <TextView
         android:id="@+id/cardText"
         android:layout_width="224dp"
-        android:layout_height="131dp"
+        android:layout_height="95dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="66dp"
         android:layout_marginEnd="8dp"
@@ -42,6 +42,15 @@
         android:text="@string/defaultCloseButton"
         android:layout_gravity="end|bottom"
         android:layout_marginEnd="5dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cardOpenButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="100dp"
+        android:text="@string/defaultOpenButton" />
 
     <LinearLayout
         android:layout_width="match_parent"
