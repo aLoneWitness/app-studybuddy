@@ -1,10 +1,15 @@
 package nl.niekvangogh.studybuddy;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import org.w3c.dom.Text;
 
@@ -23,6 +28,7 @@ public class MainActivity extends Activity {
     RecyclerView.Adapter dashboardAdapter;
     RecyclerView.LayoutManager dashboardLayoutManager;
     ArrayList<Card> list = new ArrayList<Card>();
+    private Button button1;
 
     int[] image_id = {
             R.drawable.cardplaceholder,
@@ -38,25 +44,90 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         description = getResources().getStringArray(R.array.card_desc);
         title = getResources().getStringArray(R.array.card_title);
-        int count = 0;
-        for(String Description : description)
-        {
-            Card card = new Card(image_id[count],title[count],description[count], false);
+        createCard("wow im a announcement", "General Announcement", 1);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0);
 
-            list.add(card);
-            count++;
-        }
-        dashboardView = (RecyclerView)findViewById(R.id.dashboard_view);
-        dashboardLayoutManager = new LinearLayoutManager(this);
-        dashboardView.setLayoutManager(dashboardLayoutManager);
-        dashboardView.setHasFixedSize(true);
-        dashboardAdapter = new CardAdapter(list);
-        dashboardView.setAdapter(dashboardAdapter);
+
+
+        //int count = 0;
+        //for(String Description : description)
+        //{
+        //    Card card = new Card(image_id[count],title[count],description[count], false);
+//
+        //    list.add(card);
+        //    count++;
+        //}
+        //dashboardView = (RecyclerView)findViewById(R.id.dashboard_view);
+        //dashboardLayoutManager = new LinearLayoutManager(this);
+        //dashboardView.setLayoutManager(dashboardLayoutManager);
+        //dashboardView.setHasFixedSize(true);
+        //dashboardAdapter = new CardAdapter(list);
+        //dashboardView.setAdapter(dashboardAdapter);
+        button1 = (Button) findViewById(R.id.buttonW);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                removeCard(0);
+
+
+
+            }
+        });
+    }
+
+    public void createCard(String message, String title, int imageId) {
+        Card card = new Card(image_id[imageId], title, message, false);
+
+        this.list.add(card);
+        this.dashboardAdapter = new CardAdapter(list);
+        this.dashboardLayoutManager = new LinearLayoutManager(this);
+
+        this.dashboardView = findViewById(R.id.dashboard_view);
+        this.dashboardView.setAdapter(dashboardAdapter);
+        this.dashboardView.setLayoutManager(dashboardLayoutManager);
+        this.dashboardView.setHasFixedSize(true);
+        //this.dashboardView
 
     }
 
+    public void removeCard(int index) {
+        if(list.isEmpty()){
+            showSnackbar("You cant delete nothing, silly.");
+        }        else {
+            Context context = dashboardView.getContext();
+            LayoutAnimationController controller = null;
+            controller = AnimationUtils.loadLayoutAnimation(context, R.anim.layout_swipe_right);
+            dashboardView.setLayoutAnimation(controller);
+            list.remove(index);
+            dashboardAdapter.notifyDataSetChanged();
+        }
+    }
+    public void removeAllCards(){
+        if(list.isEmpty()){
+            showSnackbar("You can't delete nothing, silly.");
+        }
+        else{
+            while(list.isEmpty() == false){
+                list.remove(0);
+            }
 
+        }
+    }
+    public void showSnackbar(String message){
+        View contextView = findViewById(R.id.dashboard_view);
 
-
+        Snackbar.make(contextView, message, Snackbar.LENGTH_SHORT)
+                .show();
+    }
 
 }

@@ -13,9 +13,10 @@ import java.util.ArrayList;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder> {
-    ArrayList<Card> cards = new ArrayList<Card>();
 
-    public CardAdapter(ArrayList<Card> cards){
+    private ArrayList<Card> cards = new ArrayList<Card>();
+
+    public CardAdapter(ArrayList<Card> cards) {
         this.cards = cards;
 
     }
@@ -34,7 +35,15 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
         Card card = cards.get(position);
         holder.card_image.setImageResource(card.getImageId());
         holder.card_text.setText(card.getDescription());
+        holder.card_title.setText(card.getTitle());
 
+        holder.card_close_button.setOnClickListener(new View.OnClickListener(){
+           @Override
+           public void onClick(View v) {
+               cards.remove(0);
+               notifyDataSetChanged();
+           }
+        });
     }
 
     @Override
@@ -42,17 +51,20 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
         return cards.size();
     }
 
-    public static class CardViewHolder extends RecyclerView.ViewHolder
-    {
-        ImageView card_image;
-        TextView card_text;
-        MaterialButton card_close_button;
+    public static class CardViewHolder extends RecyclerView.ViewHolder {
+        private ImageView card_image;
+        private TextView card_text;
+        private MaterialButton card_close_button;
+        private TextView card_title;
 
-        public CardViewHolder(View view){
+        public CardViewHolder(View view) {
             super(view);
-            card_image = (ImageView)view.findViewById(R.id.cardImage);
-            card_text = (TextView)view.findViewById(R.id.cardText);
-            card_close_button = (MaterialButton)view.findViewById(R.id.cardCloseButton);
+            this.card_image = (ImageView) view.findViewById(R.id.cardImage);
+            this.card_text = (TextView) view.findViewById(R.id.cardText);
+            this.card_close_button = (MaterialButton) view.findViewById(R.id.cardCloseButton);
+            this.card_title = (TextView) view.findViewById(R.id.cardTitle);
+
         }
     }
+
 }
