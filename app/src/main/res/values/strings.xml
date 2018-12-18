@@ -101,4 +101,5 @@
     <string name="qr_description">Gebruik QR-code</string>
     <string name="qrplaceholder_description">Placeholder for QR</string>
     <string name="qrcode_example">QR code voorbeeld</string>
+    <string name ="tabtitle">Friends</string>
 </resources>

@@ -3,6 +3,7 @@ package nl.niekvangogh.studybuddy;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.widget.TextView;
 
 /**
  * A login screen that offers login via email/password.
