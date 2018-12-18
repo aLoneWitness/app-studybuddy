@@ -24,6 +24,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".QRActivity"></activity>
+        <activity android:name=".TopBar" />
+        <activity
+            android:name=".Sidedrawer"
+            android:label="@string/title_activity_sidedrawer"></activity>
     </application>
 
 </manifest>

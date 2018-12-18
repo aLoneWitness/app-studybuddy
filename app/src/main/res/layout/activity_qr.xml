@@ -7,6 +7,11 @@
     tools:context=".QRActivity"
     tools:layout_editor_absoluteY="25dp">
 
+    <include
+        layout="@layout/activity_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
 
     <TextView
         android:id="@+id/textView"
