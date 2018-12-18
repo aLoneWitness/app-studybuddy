@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    style="@style/Widget.MaterialComponents.CardView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/material_card_spacing"
+    android:layout_marginTop="@dimen/material_card_spacing"
+    android:layout_marginRight="@dimen/material_card_spacing"
+    android:layout_margin="@dimen/material_card_spacing"
+    android:minHeight="175dp"
+    app:cardCornerRadius="2dp">
+
+    <TextView
+        android:id="@+id/cardText"
+        android:layout_width="224dp"
+        android:layout_height="131dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/card_default_text"
+        android:textColor="@color/colorPrimaryText" />
+
+    <ImageView
+        android:id="@+id/cardImage"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/default_image_placeholder_text"
+        android:src="@drawable/cardplaceholder" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cardCloseButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/defaultCloseButton"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="5dp"/>
+
+
+</com.google.android.material.card.MaterialCardView>
