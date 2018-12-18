@@ -2,7 +2,7 @@ package nl.niekvangogh.studybuddy;
 
 public class Card {
 
-    private int imageId, cardLocation;
+    private int imageId;
     private String title,description;
     private boolean priority;
 
@@ -12,14 +12,6 @@ public class Card {
 
     public void setImageId(int imageId) {
         this.imageId = imageId;
-    }
-
-    public int getCardLocation() {
-        return cardLocation;
-    }
-
-    public void setCardLocation(int cardLocation) {
-        this.cardLocation = cardLocation;
     }
 
     public String getTitle() {
@@ -53,6 +45,11 @@ public class Card {
         this.setPriority(priority);
 
 
+
     }
+
+
+
+
 
 }

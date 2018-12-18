@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    style="@style/Widget.MaterialComponents.CardView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="@dimen/material_card_spacing"
     android:layout_marginTop="@dimen/material_card_spacing"
     android:layout_marginRight="@dimen/material_card_spacing"
+    android:layout_margin="@dimen/material_card_spacing"
     android:minHeight="175dp"
-    app:cardBackgroundColor="@color/colorPrimary"
-    app:cardCornerRadius="16dp"
-    app:strokeColor="@color/colorPrimary"
-    app:strokeWidth="5dp">
+    app:cardCornerRadius="2dp">
 
     <TextView
         android:id="@+id/cardText"
@@ -37,13 +36,12 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/cardCloseButton"
-        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:text="@string/button_label_closecard" />
+        android:text="@string/defaultCloseButton"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="5dp"/>
 
 
 </com.google.android.material.card.MaterialCardView>
