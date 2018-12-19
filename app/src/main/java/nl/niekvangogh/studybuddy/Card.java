@@ -3,14 +3,15 @@ package nl.niekvangogh.studybuddy;
 public class Card {
 
     private int imageId;
-    private String title,description;
+    private String title, description;
     private boolean priority;
+    private int openActivityId;
 
     public int getImageId() {
         return imageId;
     }
 
-    public void setImageId(int imageId) {
+    private void setImageId(int imageId) {
         this.imageId = imageId;
     }
 
@@ -18,7 +19,7 @@ public class Card {
         return title;
     }
 
-    public void setTitle(String title) {
+    private void setTitle(String title) {
         this.title = title;
     }
 
@@ -26,7 +27,7 @@ public class Card {
         return description;
     }
 
-    public void setDescription(String description) {
+    private void setDescription(String description) {
         this.description = description;
     }
 
@@ -34,22 +35,30 @@ public class Card {
         return priority;
     }
 
-    public void setPriority(boolean priority) {
+    private void setPriority(boolean priority) {
         this.priority = priority;
     }
 
-    public Card(int imageId, String title, String description, Boolean priority){
+    public int getOpenActivityId() {
+        return openActivityId;
+    }
+
+    private void setOpenActivityId(int openActivityId) {
+        this.openActivityId = openActivityId;
+    }
+
+    public Card(int imageId, String title, String description, Boolean priority, int openActivityId) {
         this.setImageId(imageId);
         this.setTitle(title);
         this.setDescription(description);
         this.setPriority(priority);
-
+        this.setOpenActivityId(openActivityId);
 
 
     }
 
 
-
-
-
 }
+
+
+

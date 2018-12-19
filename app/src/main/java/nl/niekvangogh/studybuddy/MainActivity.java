@@ -52,20 +52,28 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         description = getResources().getStringArray(R.array.card_desc);
         title = getResources().getStringArray(R.array.card_title);
-        createCard("wow im a announcement", "General Announcement", 1, DeadlineActivity);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, DeadlineActivity);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, DeadlineActivity);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, DeadlineActivity);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, this);
+
+        /*
+        ID LIST:
+        0 - No open button
+        1 - DeadlineWidget
+        2 -
+         */
+
+        createCard("wow im a announcement", "General Announcement", 1, 1 );
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 1);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 1);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 1);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
+        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
 
 
 
@@ -97,11 +105,11 @@ public class MainActivity extends Activity {
         });
     }
 
-    public void createCard(String message, String title, int imageId, Activity activity) {
-        Card card = new Card(image_id[imageId], title, message, false);
+    public void createCard(String message, String title, int imageId, int reference) {
+        Card card = new Card(image_id[imageId], title, message, false, reference);
 
         this.list.add(card);
-        this.dashboardAdapter = new CardAdapter(list, this, activity);
+        this.dashboardAdapter = new CardAdapter(list, this);
         this.dashboardLayoutManager = new LinearLayoutManager(this);
 
         this.dashboardView = findViewById(R.id.dashboard_view);
@@ -144,9 +152,13 @@ public class MainActivity extends Activity {
                 .show();
     }
 
-    public void switchActivity(Activity activity){
-        Intent intent = new Intent(this, activity.getClass());
-        startActivity(intent);
+    public void switchActivity(int openActivityId){
+
+        if(openActivityId == 1){
+            Intent intent = new Intent(this, DeadlineActivity.class);
+            startActivity(intent);
+        }
+
     }
 
 }

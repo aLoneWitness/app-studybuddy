@@ -1,6 +1,9 @@
 package nl.niekvangogh.studybuddy;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.opengl.GLES32;
+import android.util.DebugUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +13,7 @@ import android.widget.TextView;
 import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,10 +21,8 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
 
     private ArrayList<Card> cards = new ArrayList<Card>();
     private final Activity parentInstance;
-    private Activity referenceActivity;
 
-    public CardAdapter(ArrayList<Card> cards, Activity instance, Activity reference) {
-        this.referenceActivity = reference;
+    public CardAdapter(ArrayList<Card> cards, Activity instance) {
         this.cards = cards;
         this.parentInstance = instance;
     }
@@ -47,13 +49,24 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
             }
         });
 
-        holder.card_open_button.setOnClickListener(click -> {
-            if (this.parentInstance instanceof MainActivity) {
+        if(card.getOpenActivityId() == 0){
+            holder.card_open_button.setVisibility(View.INVISIBLE);
+        }
+        else{
+            holder.card_open_button.setVisibility(View.VISIBLE);
+            holder.card_open_button.setOnClickListener(click -> {
+                if(this.parentInstance instanceof MainActivity) {
+                    ((MainActivity)this.parentInstance).switchActivity(card.getOpenActivityId());
+                }
+            });
+        }
 
 
-                ((MainActivity)this.parentInstance).showSnackbar(String.valueOf(referenceActivity));
-            }
-        });
+
+
+
+
+
     }
 
     @Override
