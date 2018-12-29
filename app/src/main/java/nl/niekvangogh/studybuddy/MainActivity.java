@@ -121,17 +121,21 @@ public class MainActivity extends Activity {
 
     }
 
-    public void removeCard(int index) {
+    public void removeCard(int position) {
         if(list.isEmpty()){
             showSnackbar("You cant delete nothing, silly.");
         }
         else {
-            Context context = dashboardView.getContext();
+            /*Context context = dashboardView.getContext();
             LayoutAnimationController controller = null;
             controller = AnimationUtils.loadLayoutAnimation(context, R.anim.layout_swipe_right);
-            dashboardView.setLayoutAnimation(controller);
-            list.remove(index);
-            dashboardAdapter.notifyDataSetChanged();
+            this.dashboardView.setLayoutAnimation(controller);*/
+
+            showSnackbar(Integer.toString(position));
+            this.list.remove(position);
+            this.dashboardAdapter.notifyItemRemoved(position);
+            //this.dashboardAdapter.notifyDataSetChanged();
+
         }
     }
     public void removeAllCards(){
@@ -139,7 +143,7 @@ public class MainActivity extends Activity {
             showSnackbar("You can't delete nothing, silly.");
         }
         else{
-            while(list.isEmpty() == false){
+            while(!list.isEmpty()){
                 list.remove(0);
             }
 

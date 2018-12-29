@@ -45,7 +45,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
 
         holder.card_close_button.setOnClickListener(click -> {
             if(this.parentInstance instanceof MainActivity) {
-                ((MainActivity)this.parentInstance).removeCard(position);
+                ((MainActivity)this.parentInstance).removeCard(holder.getAdapterPosition());
             }
         });
 
