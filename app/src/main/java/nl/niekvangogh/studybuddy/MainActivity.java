@@ -126,15 +126,20 @@ public class MainActivity extends Activity {
             showSnackbar("You cant delete nothing, silly.");
         }
         else {
+            try {
             /*Context context = dashboardView.getContext();
             LayoutAnimationController controller = null;
             controller = AnimationUtils.loadLayoutAnimation(context, R.anim.layout_swipe_right);
             this.dashboardView.setLayoutAnimation(controller);*/
 
-            showSnackbar(Integer.toString(position));
-            this.list.remove(position);
-            this.dashboardAdapter.notifyItemRemoved(position);
-            //this.dashboardAdapter.notifyDataSetChanged();
+                showSnackbar(Integer.toString(position));
+                this.list.remove(position);
+                this.dashboardAdapter.notifyItemRemoved(position);
+                //this.dashboardAdapter.notifyDataSetChanged();
+            }
+            catch(ArrayIndexOutOfBoundsException e){
+                showSnackbar("This card is already dismissed.");
+            }
 
         }
     }
