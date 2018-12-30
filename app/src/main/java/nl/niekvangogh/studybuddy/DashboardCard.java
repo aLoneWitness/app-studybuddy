@@ -1,6 +1,6 @@
 package nl.niekvangogh.studybuddy;
 
-public class Card {
+public class DashboardCard {
 
     private int imageId;
     private String title, description;
@@ -47,7 +47,7 @@ public class Card {
         this.openActivityId = openActivityId;
     }
 
-    public Card(int imageId, String title, String description, Boolean priority, int openActivityId) {
+    public DashboardCard(int imageId, String title, String description, Boolean priority, int openActivityId) {
         this.setImageId(imageId);
         this.setTitle(title);
         this.setDescription(description);

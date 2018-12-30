@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
     private RecyclerView.Adapter dashboardAdapter;
     private RecyclerView.LayoutManager dashboardLayoutManager;
 
-    private ArrayList<Card> list = new ArrayList<>();
+    private ArrayList<DashboardCard> list = new ArrayList<>();
 
     private Button tempTestButton;
 
@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
         2 - NewsWidget (Awaiting merge, is not usable yet)
          */
 
-        createCard("Fontys bla bla bla announcements.", "General Announcement", 1, 1 );
+        createCard("Fontys bla bla bla announcements.", "General Announcement", 1, 2 );
         createCard("Deadline soon, Open to read more.", "Priority Message", 0, 1);
         createCard("Deadline soon, Open to read more.", "Priority Message", 0, 1);
         createCard("Deadline soon, Open to read more.", "Priority Message", 0, 1);
@@ -64,16 +64,16 @@ public class MainActivity extends Activity {
         tempTestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                removeCard(0);
+                switchActivity(2);
             }
         });
     }
 
     public void createCard(String message, String title, int imageId, int reference) {
-        Card card = new Card(image_id[imageId], title, message, false, reference);
+        DashboardCard dashboardCard = new DashboardCard(image_id[imageId], title, message, false, reference);
 
-        this.list.add(card);
-        this.dashboardAdapter = new CardAdapter(list, this);
+        this.list.add(dashboardCard);
+        this.dashboardAdapter = new DashboardCardAdapter(list, this);
         this.dashboardLayoutManager = new LinearLayoutManager(this);
 
         this.dashboardView = findViewById(R.id.dashboard_view);
@@ -124,6 +124,13 @@ public class MainActivity extends Activity {
         if(openActivityId == 1){
             Intent intent = new Intent(this, DeadlineActivity.class);
             startActivity(intent);
+        }
+        else if(openActivityId == 2){
+            Intent intent = new Intent(this, NewsActivity.class);
+            startActivity(intent);
+        }
+        else{
+            showSnackbar("Could not open activity.");
         }
     }
 
