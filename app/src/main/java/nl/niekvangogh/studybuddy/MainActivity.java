@@ -1,41 +1,27 @@
 package nl.niekvangogh.studybuddy;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
-import android.os.Debug;
 import android.view.View;
-import android.view.animation.AnimationUtils;
-import android.view.animation.LayoutAnimationController;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import static java.security.AccessController.getContext;
-
 public class MainActivity extends Activity {
 
-    private Button closeCardButton;
+    private RecyclerView dashboardView;
+    private RecyclerView.Adapter dashboardAdapter;
+    private RecyclerView.LayoutManager dashboardLayoutManager;
 
-    public int cardCount;
-    private int cardIndex;
+    private ArrayList<Card> list = new ArrayList<>();
 
-    RecyclerView dashboardView;
-    RecyclerView.Adapter dashboardAdapter;
-    RecyclerView.LayoutManager dashboardLayoutManager;
-
-    ArrayList<Card> list = new ArrayList<Card>();
-
-    private Button button1;
+    private Button tempTestButton;
 
     int[] image_id = {
             R.drawable.cardplaceholder,
@@ -47,7 +33,6 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        cardIndex = 0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         description = getResources().getStringArray(R.array.card_desc);
@@ -57,13 +42,13 @@ public class MainActivity extends Activity {
         ID LIST:
         0 - No open button
         1 - DeadlineWidget
-        2 -
+        2 - NewsWidget (Awaiting merge, is not usable yet)
          */
 
-        createCard("wow im a announcement", "General Announcement", 1, 1 );
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 1);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 1);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 1);
+        createCard("Fontys bla bla bla announcements.", "General Announcement", 1, 1 );
+        createCard("Deadline soon, Open to read more.", "Priority Message", 0, 1);
+        createCard("Deadline soon, Open to read more.", "Priority Message", 0, 1);
+        createCard("Deadline soon, Open to read more.", "Priority Message", 0, 1);
         createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
         createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
         createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
@@ -75,32 +60,11 @@ public class MainActivity extends Activity {
         createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
         createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
 
-
-
-
-
-        //int count = 0;
-        //for(String Description : description)
-        //{
-        //    Card card = new Card(image_id[count],title[count],description[count], false);
-//
-        //    list.add(card);
-        //    count++;
-        //}
-        //dashboardView = (RecyclerView)findViewById(R.id.dashboard_view);
-        //dashboardLayoutManager = new LinearLayoutManager(this);
-        //dashboardView.setLayoutManager(dashboardLayoutManager);
-        //dashboardView.setHasFixedSize(true);
-        //dashboardAdapter = new CardAdapter(list);
-        //dashboardView.setAdapter(dashboardAdapter);
-        button1 = (Button) findViewById(R.id.buttonW);
-        button1.setOnClickListener(new View.OnClickListener() {
+        tempTestButton = (Button) findViewById(R.id.buttonW);
+        tempTestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 removeCard(0);
-
-
-
             }
         });
     }
@@ -127,15 +91,9 @@ public class MainActivity extends Activity {
         }
         else {
             try {
-            /*Context context = dashboardView.getContext();
-            LayoutAnimationController controller = null;
-            controller = AnimationUtils.loadLayoutAnimation(context, R.anim.layout_swipe_right);
-            this.dashboardView.setLayoutAnimation(controller);*/
-
                 showSnackbar(Integer.toString(position));
                 this.list.remove(position);
                 this.dashboardAdapter.notifyItemRemoved(position);
-                //this.dashboardAdapter.notifyDataSetChanged();
             }
             catch(ArrayIndexOutOfBoundsException e){
                 showSnackbar("This card is already dismissed.");
@@ -167,7 +125,6 @@ public class MainActivity extends Activity {
             Intent intent = new Intent(this, DeadlineActivity.class);
             startActivity(intent);
         }
-
     }
 
 }
