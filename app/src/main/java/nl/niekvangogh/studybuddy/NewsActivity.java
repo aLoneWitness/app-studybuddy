@@ -33,6 +33,19 @@ public class NewsActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         addNewsItem("lol im retard", "fontys explosie in r1 door te veel koffie");
+        addNewsItem("lol im retard", "fontys explosie in r1 door te veel koffie");
+        addNewsItem("lol im retard", "fontys explosie in r1 door te veel koffie");
+        addNewsItem("lol im retard", "fontys explosie in r1 door te veel koffie");
+        addNewsItem("lol im retard", "fontys explosie in r1 door te veel koffie");
+        addNewsItem("lol im retard", "fontys explosie in r1 door te veel koffie");
+        addNewsItem("lol im retard", "fontys explosie in r1 door te veel koffie");
+        addNewsItem("lol im retard", "fontys explosie in r1 door te veel koffie");
+        addNewsItem("lol im retard", "fontys explosie in r1 door te veel koffie");
+        addNewsItem("lol im retard", "fontys explosie in r1 door te veel koffie");
+        addNewsItem("lol im retard", "fontys explosie in r1 door te veel koffie");
+        addNewsItem("lol im retard", "fontys explosie in r1 door te veel koffie");
+        addNewsItem("lol im retard", "fontys explosie in r1 door te veel koffie");
+
     }
 
     public void addNewsItem(String title, String description){
