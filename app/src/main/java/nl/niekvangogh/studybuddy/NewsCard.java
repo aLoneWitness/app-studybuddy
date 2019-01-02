@@ -4,11 +4,7 @@ public class NewsCard {
 
     private String title;
     private String description;
-
-    public NewsCard(String title, String description) {
-        this.description = description;
-        this.title = title;
-    }
+    private String link;
 
     public String getTitle() {
         return title;
@@ -17,5 +13,17 @@ public class NewsCard {
     public String getDescription() {
         return description;
     }
+
+    public String getLink() {
+        return link;
+    }
+
+    public NewsCard(String title, String description, String link) {
+        this.description = description;
+        this.title = title;
+        this.link = link;
+    }
 }
+
+
 
