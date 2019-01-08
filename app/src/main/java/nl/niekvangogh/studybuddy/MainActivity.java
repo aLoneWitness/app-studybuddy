@@ -26,7 +26,8 @@ public class MainActivity extends Activity {
     int[] image_id = {
             R.drawable.cardplaceholder,
             R.drawable.cardplaceholder2,
-            R.drawable.cardplaceholder3
+            R.drawable.cardplaceholder3,
+            R.drawable.fhictlogo
     };
 
     String[] description, title;
@@ -45,21 +46,9 @@ public class MainActivity extends Activity {
         2 - NewsWidget (Awaiting merge, is not usable yet)
          */
 
-        createCard("Fontys bla bla bla announcements.", "General Announcement", 1, 1 );
-        createCard("Deadline soon, Open to read more.", "Priority Message", 0, 1);
-        createCard("Deadline soon, Open to read more.", "Priority Message", 0, 1);
-        createCard("Deadline soon, Open to read more.", "Priority Message", 0, 1);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
+        createCard("Nieuw nieuwsartikel gepost op de Fontys.nl website. Fontys heeft nieuw gebouw R7 aangekondigt. ", "Nieuws", 3, 1 );
 
+        /*
         tempTestButton = (Button) findViewById(R.id.buttonW);
         tempTestButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +56,7 @@ public class MainActivity extends Activity {
                 removeCard(0);
             }
         });
+        */
     }
 
     public void createCard(String message, String title, int imageId, int reference) {
