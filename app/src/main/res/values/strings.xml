@@ -14,4 +14,32 @@
     </string>
     <string name="fhictemail_hint">Enter your FHICT email adress.</string>
     <string name="fhictpassword_hint">Enter your password.</string>
+    <string name="button_label_login">Log in</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="default_image_placeholder_text">Attempting to load image...</string>
+    <string name="card_default_text">Owowofdasdjkfhsdajfsdjaf afdsafsadfsad asfsdafasfsd</string>
+    <string name="button_label_closecard">Close</string>
+    <string name="cardViewText">Insert text here. dsahfksdjfksda skjdhfsdaj fsdajkfh sadkjf sdjfsadkjf sadfsadhfsdaf sadfhsdakjf sadfhsDJF SADHFASDF ASJHFSADIGJASIOGJASKDF DKFHSADKF SDKF SADJFH SADFDA SDAKJFHSAKJ FSADKJFHSDF SA.</string>
+    <string name="defaultContentDescription">Missing image, ree</string>
+    <string name="defaultCloseButton">Close</string>
+    <string name="defaultOpenButton">Open</string>
+
+    <string-array name="card_title">
+        <item>"Announcement"</item>
+        <item>"Deadline"</item>
+        <item>"Appointment"</item>
+        <item>"Placeholder"</item>
+        <item>"Placeholder"</item>
+        <item>"Placeholder"</item>
+        <item>"Placeholder"</item>
+        <item>"Placeholder"</item>
+    </string-array>
+
+    <string-array name="card_desc">
+        <item name="announcement_message">Gebouw R1 heeft onderhoudt, en daarom kan de achteringang niet worden gebruikt.</item>
+        <item name="announcement_message">2MANDATORY EVACUATION FOR ALL RESIDENTS LIVING BELOW LAKE TAHOMA  CONTINUES. THIS WAS ISSUED AT THE RECOMMENDATION OF DAM ENGINEERS  WHO REMAIN ON THE SCENE. THE CLASS 1 EMERGENCY AT LAKE TAHOMA  WILL CONTINUE UNTIL DAM INSPECTORS EVALUATE THE DAM DURING  DAYLIGHT HOURS. THIS IS FOR YOUR SAFETY.</item>
+        <item name="announcement_message">3MANDATORY EVACUATION FOR ALL RESIDENTS LIVING BELOW LAKE TAHOMA  CONTINUES. THIS WAS ISSUED AT THE RECOMMENDATION OF DAM ENGINEERS  WHO REMAIN ON THE SCENE. THE CLASS 1 EMERGENCY AT LAKE TAHOMA  WILL CONTINUE UNTIL DAM INSPECTORS EVALUATE THE DAM DURING  DAYLIGHT HOURS. THIS IS FOR YOUR SAFETY.</item>
+
+    </string-array>
+
 </resources>
