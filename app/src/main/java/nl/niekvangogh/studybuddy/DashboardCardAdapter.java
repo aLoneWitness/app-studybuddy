@@ -13,13 +13,13 @@ import java.util.ArrayList;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder> {
+public class DashboardCardAdapter extends RecyclerView.Adapter<DashboardCardAdapter.CardViewHolder> {
 
-    private ArrayList<Card> cards = new ArrayList<Card>();
+    private ArrayList<DashboardCard> dashboardCards = new ArrayList<DashboardCard>();
     private final Activity parentInstance;
 
-    public CardAdapter(ArrayList<Card> cards, Activity instance) {
-        this.cards = cards;
+    public DashboardCardAdapter(ArrayList<DashboardCard> dashboardCards, Activity instance) {
+        this.dashboardCards = dashboardCards;
         this.parentInstance = instance;
     }
 
@@ -34,10 +34,10 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
     public void onBindViewHolder(CardViewHolder holder, int position) {
 
 
-        Card card = cards.get(position);
-        holder.card_image.setImageResource(card.getImageId());
-        holder.card_text.setText(card.getDescription());
-        holder.card_title.setText(card.getTitle());
+        DashboardCard dashboardCard = dashboardCards.get(position);
+        holder.card_image.setImageResource(dashboardCard.getImageId());
+        holder.card_text.setText(dashboardCard.getDescription());
+        holder.card_title.setText(dashboardCard.getTitle());
 
         holder.card_close_button.setOnClickListener(click -> {
             if(this.parentInstance instanceof MainActivity) {
@@ -45,14 +45,14 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
             }
         });
 
-        if(card.getOpenActivityId() == 0){
+        if(dashboardCard.getOpenActivityId() == 0){
             holder.card_open_button.setVisibility(View.INVISIBLE);
         }
         else{
             holder.card_open_button.setVisibility(View.VISIBLE);
             holder.card_open_button.setOnClickListener(click -> {
                 if(this.parentInstance instanceof MainActivity) {
-                    ((MainActivity)this.parentInstance).switchActivity(card.getOpenActivityId());
+                    ((MainActivity)this.parentInstance).switchActivity(dashboardCard.getOpenActivityId());
                 }
             });
         }
@@ -67,7 +67,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
 
     @Override
     public int getItemCount() {
-        return cards.size();
+        return dashboardCards.size();
     }
 
     public static class CardViewHolder extends RecyclerView.ViewHolder {
