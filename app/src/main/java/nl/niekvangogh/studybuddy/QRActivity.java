@@ -1,5 +1,6 @@
 package nl.niekvangogh.studybuddy;
 
+<<<<<<< HEAD:app/src/main/java/nl/niekvangogh/studybuddy/LoginActivity.java
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,10 +15,19 @@ import androidx.appcompat.app.AppCompatActivity;
 public class LoginActivity extends AppCompatActivity {
     private Button button;
 
+=======
+import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Bundle;
+import android.widget.TextView;
+>>>>>>> activity-qr:app/src/main/java/nl/niekvangogh/studybuddy/QRActivity.java
+
+public class QRActivity extends AppCompatActivity {
+    private TextView qr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD:app/src/main/java/nl/niekvangogh/studybuddy/LoginActivity.java
         setContentView(R.layout.activity_login);
 
         button = (Button) findViewById(R.id.material_loginbutton);
@@ -38,3 +48,10 @@ public class LoginActivity extends AppCompatActivity {
 
 
 }
+=======
+        setContentView(R.layout.activity_qr);
+        qr = findViewById(R.id.textView);
+        qr.setText("QR-Code");
+    }
+}
+>>>>>>> activity-qr:app/src/main/java/nl/niekvangogh/studybuddy/QRActivity.java
