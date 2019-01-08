@@ -28,7 +28,8 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_main" />
         <activity android:name=".DeadlineActivity" />
-        <activity android:name=".NewsActivity"></activity>
+        <activity android:name=".NewsActivity" />
+        <activity android:name=".QRActivity"></activity>
     </application>
 
 </manifest>

@@ -64,7 +64,7 @@ public class MainActivity extends Activity {
         tempTestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switchActivity(2);
+                switchActivity(3);
             }
         });
     }
@@ -127,6 +127,10 @@ public class MainActivity extends Activity {
         }
         else if(openActivityId == 2){
             Intent intent = new Intent(this, NewsActivity.class);
+            startActivity(intent);
+        }
+        else if(openActivityId == 3){
+            Intent intent = new Intent(this, QRActivity.class);
             startActivity(intent);
         }
         else{

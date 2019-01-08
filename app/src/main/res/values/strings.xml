@@ -23,6 +23,8 @@
     <string name="defaultContentDescription">Missing image, ree</string>
     <string name="defaultCloseButton">Close</string>
     <string name="defaultOpenButton">Open</string>
+    <string name="qr_description">edit me</string>
+    <string name="qrcode_example">qrcodedesc</string>
 
     <string-array name="card_title">
         <item>"Announcement"</item>
