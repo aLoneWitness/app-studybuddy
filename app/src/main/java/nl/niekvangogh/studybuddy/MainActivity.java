@@ -46,24 +46,8 @@ public class MainActivity extends Activity {
         2 - NewsWidget (Awaiting merge, is not usable yet)
          */
 
-<<<<<<< HEAD
-        createCard("Nieuw nieuwsartikel gepost op de Fontys.nl website. Fontys heeft nieuw gebouw R7 aangekondigt. ", "Nieuws", 3, 1 );
-=======
-        createCard("Fontys bla bla bla announcements.", "General Announcement", 1, 2 );
-        createCard("Deadline soon, Open to read more.", "Priority Message", 0, 1);
-        createCard("Deadline soon, Open to read more.", "Priority Message", 0, 1);
-        createCard("Deadline soon, Open to read more.", "Priority Message", 0, 1);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
-        createCard("Door een storing zijn tijdelijk alle FHICT api's niet beschikbaar.", "Priority Message", 0, 0);
->>>>>>> activity-news
+        createCard("Nieuw nieuwsartikel gepost op de Fontys.nl website. Fontys heeft nieuw gebouw R7 aangekondigt. ", "Nieuws", 3, 2 );
+        createCard("Deadline Widget Sample Text", "Coming deadlines.", 1, 1 );
 
         /*
         tempTestButton = (Button) findViewById(R.id.buttonW);
